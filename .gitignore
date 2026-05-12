@@ -25,6 +25,7 @@ Thumbs.db
 *.jks
 *.keystore
 key.properties
+*.pem
 
 # NPM o node_modules si usas scripts JS
 node_modules/
