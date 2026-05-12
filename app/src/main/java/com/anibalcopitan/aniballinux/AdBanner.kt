@@ -46,8 +46,7 @@ fun BannerAd() {
                     // Banner ID (NO uses el App ID aquí)
                     // TEST CODE BANNER: ca-app-pub-3940256099942544/6300978111
                     // Production: ca-app-pub-8513987061423192/1269405123
-                    adUnitId =
-                        "ca-app-pub-3940256099942544/6300978111"
+                    adUnitId = "ca-app-pub-3940256099942544/6300978111"
 
                     //------
                     // 2. set the with of anchored adaptative banner to 360
@@ -68,7 +67,7 @@ fun BannerAd() {
                     // adListener
                     adListener = object: AdListener(){
                         override fun onAdImpression() {
-                            Log.e("ADS ADMOD", "Ad logged an impression")
+                            Log.e("ADS AdMob", "Ad logged an impression")
                         }
                     }
 
