@@ -52,8 +52,14 @@ fun BannerAd() {
                     //------
                     // 2. set the with of anchored adaptative banner to 360
                     // ------
-//                    setAdSize(AdSize.BANNER)
-                    setAdSize(AdSize.getCurrentOrientationInlineAdaptiveBannerAdSize(context, 360))
+                    //  setAdSize(AdSize.BANNER)
+                    // Dentro de tu factory en AdBanner.kt
+                    val displayMetrics = context.resources.displayMetrics
+                    val widthPixels = displayMetrics.widthPixels
+                    val adWidth = (widthPixels / displayMetrics.density).toInt()
+
+                    setAdSize(AdSize.getCurrentOrientationAnchoredAdaptiveBannerAdSize(context, adWidth))
+//                  setAdSize(AdSize.getCurrentOrientationInlineAdaptiveBannerAdSize(context, 360))
 
 
                     //------
