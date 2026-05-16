@@ -52,7 +52,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             MyLinuxTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    HomeScreen()
+                    HomeScreen(modifier = Modifier.padding(innerPadding))
                 }
             }
         }
@@ -76,15 +76,17 @@ fun GreetingPreview() {
 }
 
 @Composable
-fun HomeScreen() {
+fun HomeScreen(modifier: Modifier = Modifier) {
 
-    Column(
-        modifier = Modifier
-            .fillMaxSize()
-            .verticalScroll(rememberScrollState())
-            .background(Color(0xFF050505))
-            .padding(horizontal = 20.dp, vertical = 28.dp)
-    ) {
+    Column(modifier = modifier.fillMaxSize()) {
+        Column(
+            modifier = Modifier
+                .weight(1f)
+                .fillMaxWidth()
+                .verticalScroll(rememberScrollState())
+                .background(Color(0xFF050505))
+                .padding(horizontal = 20.dp, vertical = 28.dp)
+        ) {
 
         // TOP LABEL
         Text(
@@ -292,12 +294,7 @@ fun HomeScreen() {
 
         Spacer(modifier = Modifier.height(42.dp))
 
-        Column {
 
-            // Tu contenido
-
-            BannerAd()
-        }
 
         Spacer(modifier = Modifier.height(42.dp))
 
@@ -309,8 +306,16 @@ fun HomeScreen() {
             letterSpacing = 2.sp
         )
 
-        Spacer(modifier = Modifier.height(30.dp))
-
     }
 
+        // FOOTER BANNER AD (FIXED AT THE BOTTOM)
+        Box(
+            modifier = Modifier
+                .fillMaxWidth()
+                .background(Color(0xFF050505)),
+            contentAlignment = Alignment.Center
+        ) {
+            BannerAd()
+        }
+    }
 }
