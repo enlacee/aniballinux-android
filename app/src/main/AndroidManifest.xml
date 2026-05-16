@@ -26,11 +26,10 @@
             </intent-filter>
         </activity>
 
-        <!-- Sample AdMob app ID: ca-app-pub-3940256099942544~3347511713 -->
-        <!-- Production: ca-app-pub-8513987061423192~9661079233       -->
+        <!-- El ID se inyecta dinámicamente desde build.gradle.kts -->
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-3940256099942544~3347511713"/>
+            android:value="${admob_app_id}"/>
     </application>
 
 </manifest>

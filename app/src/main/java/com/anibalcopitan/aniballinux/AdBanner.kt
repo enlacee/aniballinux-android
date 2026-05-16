@@ -43,10 +43,8 @@ fun BannerAd() {
                     //------
                     // 1. create a new ad view
                     //------
-                    // Banner ID (NO uses el App ID aquí)
-                    // TEST CODE BANNER: ca-app-pub-3940256099942544/6300978111
-                    // Production: ca-app-pub-8513987061423192/1269405123
-                    adUnitId = "ca-app-pub-3940256099942544/6300978111"
+                    // Usamos el ID inyectado por Gradle dependiendo del entorno actual
+                    adUnitId = BuildConfig.ADMOB_BANNER_ID
 
                     //------
                     // 2. set the with of anchored adaptative banner to 360
