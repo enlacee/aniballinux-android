@@ -13,8 +13,8 @@ android {
         applicationId = "com.anibalcopitan.aniballinux"
         minSdk = 24
         targetSdk = 36
-        versionCode = 5
-        versionName = "2.0.5"
+        versionCode = 6
+        versionName = "2.1.6"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
